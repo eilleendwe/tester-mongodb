@@ -15,7 +15,6 @@ module.exports = (app) => {
   route.get('/', async (req, res) => {
     const userData = await UserModel.find();
     return res.status(200).json(usersList);
-    // const users = generateUsers();
     // return response.status(200).json(users);
   });
 
@@ -36,19 +35,4 @@ module.exports = (app) => {
 
   module.exports = route;
 
-  // Get user detail
-//   route.get('/:id', (request, response) => {
-//     const users = generateUsers();
 
-//     // Find the id
-//     const id = request.params.id;
-//     for (const user of users) {
-//       if (user.id === id) {
-//         return response.status(200).json(user);
-//       }
-//     }
-
-//     // User not found
-//     throw new Error('User not found');
-//   });
-// };

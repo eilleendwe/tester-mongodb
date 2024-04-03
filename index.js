@@ -8,9 +8,6 @@ const usersRoute = require('../tester-mongodb/api/users-route');
 
 app.use(express.json());
 
-// app.use(require("./api/articles-route"));
-// app.use(require("./users-route"));
-
 app.use('/api/articles', articlesRoute);
 app.use('/api/users', usersRoute);
 

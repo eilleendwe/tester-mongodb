@@ -1,4 +1,3 @@
-
 const mongoose = require('mongoose');
 
 mongoose.connect("mongodb://localhost:27017/tes")
@@ -44,8 +43,6 @@ const userSchema = new mongoose.Schema({
         type: Date
     }
 })
-//buat model atau collection
-// artinya collection articlesdata bakal pake schema dari articleSchema
 
 module.exports = {
     articleSchema,
@@ -53,17 +50,3 @@ module.exports = {
     mongoose
 };
 
-// module.exports = new mongoose.model('UsersData', userSchema);
-// module.exports = new mongoose.model('ArticlesData', articleSchema);
-
-
-// module.exports.ArticlesData = new mongoose.model('ArticlesData', articleSchema);
-// module.exports.UsersData = new mongoose.model('UsersData', userSchema);
-
-// const articleData = mongoose.model('ArticlesData', articleSchema);
-// const usersData= mongoose.model('UsersData', userSchema);
-
-// module.exports = {
-//     articleData,
-//     usersData
-// };
