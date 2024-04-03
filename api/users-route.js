@@ -1,15 +1,19 @@
 const express = require('express');
-const mongodb = require('../mongodb');
 const route = express.Router();
+const mongoose = require('mongoose');
+const { userSchema } = require('../mongodb');
 
-// module.exports = (app) => {
-//   app.use('/users', route);
+
+const UserModel = mongoose.model('UsersDatas', userSchema);
+module.exports = (app) => {
+  app.use('/users', route);
+};
 
   let usersList = [];
 
   // Get list of users
   route.get('/', async (req, res) => {
-    const userData = await mongodb.find();
+    const userData = await UserModel.find();
     return res.status(200).json(usersList);
     // const users = generateUsers();
     // return response.status(200).json(users);
@@ -17,7 +21,7 @@ const route = express.Router();
 
   // Create new user
   route.post('/', (req, res) => {
-    const userData = new mongodb(req.body);
+    const userData = new UserModel(req.body);
     userData.save();
     usersList.push(userData);
     res.send(userData);

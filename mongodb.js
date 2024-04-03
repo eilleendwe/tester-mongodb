@@ -47,8 +47,14 @@ const userSchema = new mongoose.Schema({
 //buat model atau collection
 // artinya collection articlesdata bakal pake schema dari articleSchema
 
-module.exports = new mongoose.model('UsersData', userSchema);
-module.exports = new mongoose.model('ArticlesData', articleSchema);
+module.exports = {
+    articleSchema,
+    userSchema,
+    mongoose
+};
+
+// module.exports = new mongoose.model('UsersData', userSchema);
+// module.exports = new mongoose.model('ArticlesData', articleSchema);
 
 
 // module.exports.ArticlesData = new mongoose.model('ArticlesData', articleSchema);
